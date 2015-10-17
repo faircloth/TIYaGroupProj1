@@ -4,7 +4,7 @@
 
   console.log('It Works!');
 
-  var tagSearch = "food";
+  var tagSearch = "fine+dining";
   var flickrURL = 'https://api.flickr.com/services/rest?method=flickr.photos.search&tags=' + tagSearch + '&format=json&nojsoncallback=1&api_key=ba1b9d0f8d9ba8dc20eadd024c969c34';
   var menuURL = 'https://json-data.herokuapp.com/restaurant/menu/1';
   var newsURL = 'https://json-data.herokuapp.com/restaurant/news/1';
@@ -86,18 +86,12 @@
   var flickrPromise = $.getJSON(flickrURL);
 
   flickrPromise.then(function (flickrResponse) {
-    console.log(flickrResponse);
-    var photosObject = flickrResponse.photos;
-    console.log(photosObject);
-    var arrayOfImgUrls = _.map(arrayOfPhotos, function (photo) {
-      return "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
-    });
+    var arrayOfPhotoObjects = flickrResponse.photos.photo;
     var numberOfImages = 5;
-    var sampleOfImages = _.sample(arrayOfImgUrls, numberOfImages);
-    // console.log(sampleOfImages);
-
-    _.each(sampleOfImages, function (randomImage) {
-      $('#imageContainer').append("<div class=\"imgContainerBox\">\n              <img class=\"imgBox\" src={randomImage}</div>");
+    var sampleOfPhotoObjects = _.sample(arrayOfPhotoObjects, numberOfImages);
+    _.each(sampleOfPhotoObjects, function (photo) {
+      console.log("https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg");
+      $('.imagesClass').append("https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg");
     });
   });
 })();
