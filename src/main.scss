@@ -2,219 +2,19 @@
 @import 'neat/neat';
 @import url(http://weloveiconfonts.com/api/?family=zocial);
 $bgcolor: #EFD9B4;
+$boxbg: #F0DAB2;
+$brown: #EFD9B4;
+$burgundy: #7B1F35;
+$boxborder: 5px solid white;
+$white: #FDFDFD;
 
-body{
+
+body {
  /*//light black*/
- background-color: $bgcolor;
  margin-top: 3%;
  margin-left: 16%;
  margin-right: 16%;
-}
-
-.pageWrap {
-  margin: 0;
-  padding: 0;
-}
-
-// the header still needs the social media stuff.
-h1{
-  margin: 1%;
-  font-family: "Great Vibes", sans-serif;
-  font-weight: lighter;
-  font-size: 80px;
-  /*Burgundy*/
-  color:  #7B1F35 ;
-  text-align: center;
-}
-
-.banner {
-  padding: 0;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3%;
-}
-
-.social {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  float: right;
-  margin-bottom: 1%;
-
-}
-
-///// zolical - supposed to be the icons///// 
-[class*="zolical-"]:before {
-  color: white;
-  font-family: 'zocial', sans-serif;
-}
-
-/*from NEAT temalpate*/
-section {
-  @include outer-container ;
-  aside.box1 { @include span-columns(4); }
-  aside.box2 { @include span-columns(4); }
-  aside.box3 { @include span-columns(4); }
-}
-
-
-
-.container {
-  width: 1000px;
-  overflow: hidden;
-}
-
-.box1 {
-  float: left;
-  margin-bottom: 0;
-}
-.box2 {
-  float: left;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 0;
-}
-.box3 {
-  float: left;
-  margin-bottom: 0;
-}
-
-.main {
-  float: right;
-}
-
-h2 { 
- font-family: Helvetica, sans-serif;
- color: #7B1F35 ;
-}
-
-.main {
-
-}
-
-.main:hover {
-
-}
-
-
-.photo1 {
-  margin-bottom: 3%;
-}
-.photo2 {
-  margin-bottom: 3%;
-}
-.photo3 {
-  margin-bottom: 3%;
-}
-.photo4 {
-  margin-bottom: 3%;
-}
-.photo5 {
-  margin-bottom: 3%;
-}
-
-.content {
-  width: 75%;
-  height: 50%;
-  margin-top: 3%;
-  overflow: hidden;
-// this border causes a line above pic 1
-  border: 5px solid #FDFDFD;
-  // bg Brown
-  background-color: #EFD9B4;
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  .menuItemTop,.menuItemBottom {
-  width: 100%;
-  }
-}
-.accordionBg {
-  width: 75%;
- height: 5%;
- // color Burgundy
- background: linear-gradient(#EFD9B4, #DEC9AA);
-}
-.navPanel {
-  // color White
-  background-color: #FDFDFD;
-  margin-top: 0;
-  padding: 3%;
-}
-// hover elements
-.content nav li:hover {
-  color: #7B1F35;
-  font-weight: bold;
-}
-.content nav li.active {
-  // bg Brown
-  background-color: #EFD9B4;
-  // color Burgundy
-  color: #7B1F35;
-  padding: 3.5%;
-  border-radius: 20% 20% 0 0;
-}
-
-.content nav li.hidden {
-  background-color: #FDFDFD;
-}
-
-.content .accordion {
-  // display: none;
-  // color Burgundy
-  color: #7B1F35;
-  // bg Brown
-  background-color: #EFD9B4;
-}
-.content .accordion.active {
-  display: block;
-  // font white
-  color: #FDFDFD;
-  // bg Brown
-  background-color: #EFD9B4;
-}
-
-
-h3 {
- font-family: Helvetica, sans-serif;
- color: #7B1F35 ;
- font-size: 13px;
-}
-
-form {
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 30;
-}
-form input {
-  width: 100%;
-  border: 1px solid #897F7D;
-  border-radius: 4%;
-}
-
-form .preference {
-  margin-right: 5%;
-}
-
-form input.notes {
-  height: 70px;
-
-}
-
-// ////// code per Michaels disign
-li {
-  list-style-type: none;
-  display: inline;
-// make current tab #EFD9B4 & background tabs #FDFDFD 
-}
-
-li.nav {
-  margin-right: 5%;
-  list-style-type: none;
-  display: inline;
-// make current tab #EFD9B4 & background tabs #FDFDFD 
+ background: linear-gradient(#897F7D, #1B1A18);
 }
 
 p {
@@ -226,20 +26,246 @@ p {
  text-align: justify;
 }
 
+.pageWrap {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 100%;
+}
+
+// the header still needs the social media stuff.
+h1{
+  margin: 1%;
+  font-family: "Great Vibes", sans-serif;
+  font-weight: lighter;
+  font-size: 80px;
+  color:  $burgundy ;
+  text-align: center;
+}
+
+/* zocial - supposed to be the icons */ 
+[class*="zocial-"]:before {
+  color: white;
+  font-family: 'zocial', sans-serif;
+}/*   What's goin on up here? This doing anything? ~JB   */
+
+.social {
+  margin: 0;
+  padding: 0;
+  float: right;
+  margin-bottom: 1%;
+}
+
+.container {
+  width: 1000px;
+  overflow: hidden;
+}
+
+.banner {
+  padding: 0;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+}
+
+// Styling for Three Boxes
+  .box {
+    float: left;
+    margin-bottom: 0;
+    border: $boxborder;
+    width: 30%;
+    background-color: $boxbg;
+    height: 300px;
+    font-family: Georgia, serif;
+  }
+  .box1 {
+    overflow: scroll;
+  }
+  .box2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: hidden;
+  }
+  .box3 {
+    overflow: hidden;
+    text-align: center;
+    span{
+      font-size: 12px;
+    }
+    a{
+      font-size: 12px;
+    }
+  }
+
+/*from NEAT template*/
+section {
+  @include outer-container ;
+  aside.box1 { @include span-columns(4); }
+  aside.box2 { @include span-columns(4); }
+  aside.box3 { @include span-columns(4); }
+}
+
+.boxTitle{
+  color: $burgundy;
+  font-family: Helvetica, sans-serif;
+}
+
+
+// Main Section Styling
+  /* Why is this Float:right???  It's a wrapper div...this worries me. ~JB */
+  .main {
+    float: right;
+  }
+  /* SEE ABOVE */
+
+
+  .content {
+    width: 75%;
+    height: 50%; // This should be a defined height.
+    margin-top: 3%;
+    float: left;
+    overflow: hidden;
+    // this border causes a line above pic 1
+    border: 5px solid $white;
+    // bg Brown
+    background-color: $brown;
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    .menuItemTop,.menuItemBottom {
+    width: 100%;
+    }
+  }
+  .accordionBg {
+    width: 75%;
+   height: 5%;
+   // color Burgundy
+   background: linear-gradient($brown, #DEC9AA);
+  }
+  // Accordion Button Styling
+    .navPanel {
+      // color White
+      background-color: $white;
+      margin-top: 0;
+      padding: 3%;
+    }
+    // hover elements
+    .content nav li:hover {
+      color: #7B1F35;
+      font-weight: bold;
+    }
+    .content nav li.active {
+      background-color: $brown;
+      //color: ;
+      padding: 3.5%;
+      border-radius: 20% 20% 0 0;
+    }
+
+    .content nav li.hidden {
+      background-color: $white;
+
+  }
+
+  // .content .accordion {
+  //   // display: none;
+  //   // color Burgundy
+  //   color: #7B1F35;
+  //   // bg Brown
+  //   background-color: #EFD9B4;
+  // }
+  // .content .accordion.active {
+  //   display: block;
+  //   // font white
+  //   color: $white;
+  //   // bg Brown
+  //   background-color: #EFD9B4;
+  // }
+
+  .accordion{
+    overflow: hidden;
+    background-color: $brown;
+    width: 100%;
+  }
+  // Hidden/Revealed Classes for Accordion
+  .hide {
+    height: 0;
+    overflow: hidden;
+  }
+  .show {
+    height: 100%;
+  }
+
+
+  h3 {
+   font-family: Helvetica, sans-serif;
+   color: $burgundy;
+   font-size: 13px;
+  }
+
+  form {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30;
+    input {
+      width: 100%;
+      border: 1px solid #897F7D;
+      border-radius: 4%;
+    }
+    .preference {
+      margin-right: 5%;
+    }
+    input.notes {
+      height: 70px;
+    }
+  }
+
+  // ////// code per Michaels disign
+  li {
+    list-style-type: none;
+    display: inline;
+  // make current tab #EFD9B4 & background tabs $white 
+    .nav {
+      margin-right: 5%;
+      list-style-type: none;
+      display: inline;
+    // make current tab #EFD9B4 & background tabs $white 
+    }
+  }
+
+  .photostream{
+    width: 20%;
+    float: right;
+    margin-top: 3%;
+  }
+
+  .photo {
+    margin-bottom: 3%;
+    width: 100%;
+    height: 140px;
+    float: right;
+    border: $boxborder;
+    background-color: $boxbg;
+  }
+
 
 ////////// footer /////////////
 
 footer {
   height: 45px;
-  background-color: #EFD9B4;
+  background-color: $brown;
   text-align: left;
+  float: left;
+  margin-top: 3%;
+  width: 100%;
 }
 
 h5 {
  font-family: "Great Vibes", sans-serif;
  font-weight: lighter;
- /*Brown*/
- color: #7B1F35;
+ color: $burgundy;
  font-size: 20px;
  margin: 0;
  margin-top: 1%;
@@ -247,22 +273,21 @@ h5 {
  float: left;
 }
 
-p.subText {
-  color: #FDFDFD;
+.subText {
+  color: $white;
   margin: 0;
   width: 50%;
   position: relative;
-}
-
-p.subText span {
-  color: #7B1F35;
+  span {
+    color: $burgundy;
+  }
 }
 
 
 // div{
 //  max-width: 40%;
 //  /*White*/
-//  border: 5px solid #FDFDFD ; 
+//  border: 5px solid $white ; 
 //  margin-top: 5%;
 //  padding: 2%;
 //  /*Brown*/

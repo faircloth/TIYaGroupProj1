@@ -16,6 +16,7 @@
     <div class="logo">
       <h1>J.Bam's</h1>
     </div>
+    <hr></hr>
     <div>
       <ul class="social">
         <li class="zocial-facebook"></li>
@@ -36,10 +37,11 @@
 <!-- triboxes in middle of page -->
     <section>
       <aside>
-        <div class="box1">
+        <div class="box box1">
           <p class="boxTitle">
             Latest News
           </p>
+          <hr></hr>
           <p class="newsTitle">
             <script type=text/template>
               <%= title %>
@@ -52,27 +54,24 @@
           </p>
         </div>
       </aside>
-      <aside><div class="box2"><p class="boxTitle">
-        Today's Special</div></aside>
+      <aside><div class="box box2"><p class="boxTitle">
+        Today's Special
+        <hr></hr></div>
+      </aside>
       <aside>
-        <div class="box3">
+        <div class="box box3">
           <p class="boxTitle">
             Our Location
           </p>
+          <hr></hr>
           <iframe
            width="265"
            height="100"
            frameborder="0" style="border:0"
            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBwhu5p1I_q2AFctjDPPDmoBEH-YZY4mjc&amp;q=721+Miami+Cir+NE+Atlanta,+GA" allowfullscreen>
           </iframe>
-          <p>
+          <span>
             721 Miami Cir NE Atlanta, GA
-          </p>
-          <span>
-            Phone number
-          </span>
-          <span>
-            Phone number 2
           </span>
           <a href="#">
             Map
@@ -80,6 +79,14 @@
           <a href="#">
             Directions
           </a>
+          <br>
+          <span>
+            404-123-4567
+          </span>
+          <span>or</span>
+          <span>
+            770-123-4567
+          </span>
         </div>
       </aside>
     </section>
@@ -95,20 +102,23 @@
             <li rel="panel3">Reservations</li>
           </ul>
         </nav>
-        <div class="menu">
-          <div class="appetizers">
-          </div>
-          <div class="entrees">
-          </div>
-          <div class="sides">
-          </div>
-        </div>
-        <div id="accordion2" class="accordion">
+        <div class="accordion story" id="accordion1">
           <ul>
             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
           </ul>
         </div>
-        <div id="accordion3" class="accordion">
+        <div class="accordion menu" id="accordion2">
+          <div class="appetizers">
+            <p class="sectionTitle">Appetizers</p>
+          </div>
+          <div class="entrees">
+          <p class="sectionTitle">Entrees</p>
+          </div>
+          <div class="sides">
+          <p class="sectionTitle">Sides</p>
+          </div>
+        </div>
+        <div class="accordion form" id="accordion3">
           <form class="reservationTab">
             <ul>
               <li>Full Name:</li>
@@ -119,7 +129,7 @@
               <br></br>
                 <input class="guest" placeholder ="Size of party" />
               <br></br>
-              <li>Date & Time:</li>
+              <li>Date &amp; Time:</li>
               <br></br>
                 <input class="date" placeholder ="mm/dd/yy, 00:00" />
               <br></br>
@@ -130,20 +140,21 @@
               <br></br>
               <li class="preference">Seating Preference:</li>
               <select>
-              <option>Indoor</option>
-              <option>Outdoor</option>
-              <option>Booth</option>
+                <option>Indoor</option>
+                <option>Outdoor</option>
+                <option>Booth</option>
+              </select>
               <br></br>
               <button>Reserve Table</button>
-            </ul>
-          </form>
-        </div>
-      </div>
 
 <!-- Photos -->
       <div class="photostream">
       </div>
     </div>
+
+  <script type="text/template" id="photoObject">
+    <img class="photo" src="https://farm<%= farm %>.staticflickr.com/<%= server %>/<%= id %>_<%= secret %>.jpg">
+  </script>
 
 <!-- Footer -->
     <footer>
@@ -159,49 +170,23 @@
   <script src="js/main.js"></script>
 
 <!-- Menu HTML injection script -->
-
-
   <script type="text/template" id="appetizers">
-    <p class="sectionTitle">Appetizers</p>
     <p class="menuItemName"><%= item  %></p>
     <p class="menuItemPrice"><%= price %></p>
     <p class="menuItemDescription"><%= description %></p>
   </script>
 
   <script type="text/template" id="entrees">
-    <p class="sectionTitle">Entrees</p>
     <p class="menuItemName"><%= item  %></p>
     <p class="menuItemPrice"><%= price %></p>
     <p class="menuItemDescription"><%= description %></p>
   </script>
 
   <script type="text/template" id="sides">
-    <p class="sectionTitle">Sides</p>
     <p class="menuItemName"><%= item  %></p>
     <p class="menuItemPrice"><%= price %></p>
     <p class="menuItemDescription"><%= description %></p>
   </script>
 
-  <script type="text/template" id="pictureBlock">
-  <img src=<%= url %> >
-  </script>
-
-
-<!-- MenuITEM HTML injection script -->
-  <script type="text/template" id="menuItem">
-    <li class="menuListItem">
-      <div class="menuItemWrap">
-        <div class="menuItemTop">
-          <div class="menuItemName">
-          <%= appetizers.item %></div><div class="spacer"><div class="bgimage"></div</div>
-          <div class="menuItemPrice"><%= appetizers.price %></div>
-        </div>
-        <div class="menuItemBottom">
-          <div class="menuItemDescription"><%= appetizers.description %></div>
-          <div class="info"><div class="icons"></div</div>
-        </div>
-      </div>
-    </li>
-  </script>
 </body>
 </html>

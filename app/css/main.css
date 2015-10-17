@@ -9,23 +9,49 @@ html {
 
 body {
   /*//light black*/
-  background-color: #EFD9B4;
   margin-top: 3%;
   margin-left: 16%;
-  margin-right: 16%; }
+  margin-right: 16%;
+  background: linear-gradient(#897F7D, #1B1A18); }
+
+p {
+  font-family: Georgia, serif;
+  font-weight: lighter;
+  /*Dark Black*/
+  color: #2C272B;
+  margin: 10%;
+  text-align: justify; }
 
 .pageWrap {
   margin: 0;
   padding: 0; }
+
+.container {
+  max-width: 100%; }
 
 h1 {
   margin: 1%;
   font-family: "Great Vibes", sans-serif;
   font-weight: lighter;
   font-size: 80px;
-  /*Burgundy*/
   color: #7B1F35;
   text-align: center; }
+
+/* zocial - supposed to be the icons */
+[class*="zocial-"]:before {
+  color: white;
+  font-family: 'zocial', sans-serif; }
+
+/*   What's goin on up here? This doing anything? ~JB   */
+.social {
+  margin: 0;
+  padding: 0;
+  float: right;
+  margin-bottom: 1%; }
+
+.container {
+  width: 1000px;
+  overflow: hidden; }
 
 .banner {
   padding: 0;
@@ -34,18 +60,32 @@ h1 {
   margin-right: auto;
   margin-bottom: 3%; }
 
-.social {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  float: right;
-  margin-bottom: 1%; }
+.box {
+  float: left;
+  margin-bottom: 0;
+  border: 5px solid white;
+  width: 30%;
+  background-color: #F0DAB2;
+  height: 300px;
+  font-family: Georgia, serif; }
 
-[class*="zolical-"]:before {
-  color: white;
-  font-family: 'zocial', sans-serif; }
+.box1 {
+  overflow: scroll; }
 
-/*from NEAT temalpate*/
+.box2 {
+  margin-left: 5%;
+  margin-right: 5%;
+  overflow: hidden; }
+
+.box3 {
+  overflow: hidden;
+  text-align: center; }
+  .box3 span {
+    font-size: 12px; }
+  .box3 a {
+    font-size: 12px; }
+
+/*from NEAT template*/
 section {
   max-width: 68em;
   margin-left: auto;
@@ -76,50 +116,20 @@ section {
     section aside.box3:last-child {
       margin-right: 0; }
 
-.container {
-  width: 1000px;
-  overflow: hidden; }
+.boxTitle {
+  color: #7B1F35;
+  font-family: Helvetica, sans-serif; }
 
-.box1 {
-  float: left;
-  margin-bottom: 0; }
-
-.box2 {
-  float: left;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 0; }
-
-.box3 {
-  float: left;
-  margin-bottom: 0; }
-
+/* Why is this Float:right???  It's a wrapper div...this worries me. ~JB */
 .main {
   float: right; }
 
-h2 {
-  font-family: Helvetica, sans-serif;
-  color: #7B1F35; }
-
-.photo1 {
-  margin-bottom: 3%; }
-
-.photo2 {
-  margin-bottom: 3%; }
-
-.photo3 {
-  margin-bottom: 3%; }
-
-.photo4 {
-  margin-bottom: 3%; }
-
-.photo5 {
-  margin-bottom: 3%; }
-
+/* SEE ABOVE */
 .content {
   width: 75%;
   height: 50%;
   margin-top: 3%;
+  float: left;
   overflow: hidden;
   border: 5px solid #FDFDFD;
   background-color: #EFD9B4; }
@@ -145,21 +155,23 @@ h2 {
 
 .content nav li.active {
   background-color: #EFD9B4;
-  color: #7B1F35;
   padding: 3.5%;
   border-radius: 20% 20% 0 0; }
 
 .content nav li.hidden {
   background-color: #FDFDFD; }
 
-.content .accordion {
-  color: #7B1F35;
-  background-color: #EFD9B4; }
+.accordion {
+  overflow: hidden;
+  background-color: #EFD9B4;
+  width: 100%; }
 
-.content .accordion.active {
-  display: block;
-  color: #FDFDFD;
-  background-color: #EFD9B4; }
+.hide {
+  height: 0;
+  overflow: hidden; }
+
+.show {
+  height: 100%; }
 
 h3 {
   font-family: Helvetica, sans-serif;
@@ -170,44 +182,47 @@ form {
   width: 40%;
   margin-left: 30%;
   margin-right: 30; }
-
-form input {
-  width: 100%;
-  border: 1px solid #897F7D;
-  border-radius: 4%; }
-
-form .preference {
-  margin-right: 5%; }
-
-form input.notes {
-  height: 70px; }
+  form input {
+    width: 100%;
+    border: 1px solid #897F7D;
+    border-radius: 4%; }
+  form .preference {
+    margin-right: 5%; }
+  form input.notes {
+    height: 70px; }
 
 li {
   list-style-type: none;
   display: inline; }
+  li .nav {
+    margin-right: 5%;
+    list-style-type: none;
+    display: inline; }
 
-li.nav {
-  margin-right: 5%;
-  list-style-type: none;
-  display: inline; }
+.photostream {
+  width: 20%;
+  float: right;
+  margin-top: 3%; }
 
-p {
-  font-family: Georgia, serif;
-  font-weight: lighter;
-  /*Dark Black*/
-  color: #2C272B;
-  margin: 10%;
-  text-align: justify; }
+.photo {
+  margin-bottom: 3%;
+  width: 100%;
+  height: 140px;
+  float: right;
+  border: 5px solid white;
+  background-color: #F0DAB2; }
 
 footer {
   height: 45px;
   background-color: #EFD9B4;
-  text-align: left; }
+  text-align: left;
+  float: left;
+  margin-top: 3%;
+  width: 100%; }
 
 h5 {
   font-family: "Great Vibes", sans-serif;
   font-weight: lighter;
-  /*Brown*/
   color: #7B1F35;
   font-size: 20px;
   margin: 0;
@@ -215,11 +230,10 @@ h5 {
   margin-left: 3%;
   float: left; }
 
-p.subText {
+.subText {
   color: #FDFDFD;
   margin: 0;
   width: 50%;
   position: relative; }
-
-p.subText span {
-  color: #7B1F35; }
+  .subText span {
+    color: #7B1F35; }

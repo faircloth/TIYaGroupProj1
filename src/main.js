@@ -4,7 +4,8 @@
 
   console.log('It Works!');
 
-  let tagSearch = "fine+dining";
+
+  let tagSearch = "plated+food";
   let flickrURL = 'https://api.flickr.com/services/rest?method=flickr.photos.search&tags='+ tagSearch + '&format=json&nojsoncallback=1&api_key=ba1b9d0f8d9ba8dc20eadd024c969c34';
   let menuURL = 'https://json-data.herokuapp.com/restaurant/menu/1';
   let newsURL = 'https://json-data.herokuapp.com/restaurant/news/1';
@@ -40,65 +41,71 @@
     let arrayofArrays = _.values(menuResponse);
 
     let appetizers = _.pick(menuResponse, 'appetizers');
-    console.log(appetizers);
+    let appValues = _.propertyOf(appetizers)('appetizers');
+    console.log(appValues);
 
     let entrees = _.pick(menuResponse, 'entrees');
-    console.log(entrees);
+    let entValues = _.propertyOf(entrees)('entrees');
+    console.log(entValues);
 
     let sides = _.pick(menuResponse, 'sides');
-    console.log(sides);
+    let sideValues = _.propertyOf(sides)('sides');
+    console.log(sideValues);
 
-    _.each(appetizers, function (object) {
+    _.each(appValues, function (object) {
       let appTemplateString = $('#appetizers').text();
       let renderApps = _.template(appTemplateString);
       let appHTML = renderApps(object);
       $('.appetizers').append(appHTML);
-
-        // if (object.allergy > 0) {
-        //   $('.icons').addClass($('showAllergy'));
-        // };
-
-        // if (object.favorite > 0) {
-        //   $('.icons').addClass($('showFavorite'))
-        // };
-
-        // if (object.spicy > 0) {
-        //   $('.icons').addClass($('showSpicy'));
-        // };
-
-        // if (object.vegan > 0) {
-        //   $('.icons').addClass($('showVegan'));
-        // };
     });
 
-    _.each(entrees, function (object) {
+    _.each(entValues, function (object) {
       let entreesTemplateString = $('#entrees').text();
       let renderApps = _.template(entreesTemplateString);
       let entreeHTML = renderApps(object);
       $('.entrees').append(entreeHTML);
     });
 
-    _.each(sides, function(object) {
+    _.each(sideValues, function (object) {
       let sidesTemplateString = $('#sides').text();
       let renderApps = _.template(sidesTemplateString);
       let sidesHTML = renderApps(object);
       $('.sides').append(sidesHTML);
     });
 
+    // if (object.allergy > 0) {
+    //   $('.icons').addClass($('showAllergy'));
+    // };
+
+    // if (object.favorite > 0) {
+    //   $('.icons').addClass($('showFavorite'))
+    // };
+
+    // if (object.spicy > 0) {
+    //   $('.icons').addClass($('showSpicy'));
+    // };
+
+    // if (object.vegan > 0) {
+    //   $('.icons').addClass($('showVegan'));
+    // };
+
   });
 
 
 let flickrPromise = $.getJSON(flickrURL); 
 
-  flickrPromise.then( function (flickrResponse) {
-    let arrayOfPhotoObjects   = flickrResponse.photos.photo;
-    let numberOfImages        = 5;
-    let sampleOfPhotoObjects = _.sample(arrayOfPhotoObjects, numberOfImages);
-    _.each ( sampleOfPhotoObjects, function (photo) {
-      console.log("https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg");
-      $('.imagesClass').append("https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg");
-    });
+flickrPromise.then( function (flickrResponse) {
+  let arrayOfPhotoObjects   = flickrResponse.photos.photo;
+  let numberOfImages        = 5;
+  let sampleOfPhotoObjects = _.sample(arrayOfPhotoObjects, numberOfImages);
+  let photoTemplateString = $('#photoObject').text();
+  let renderPhoto = _.template(photoTemplateString);
+
+  _.each ( sampleOfPhotoObjects, function (photo) {
+    let photoHTML = renderPhoto(photo);
+    $('.photostream').append(photoHTML);
   });
+});
 
 
 }());
